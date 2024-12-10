@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | House of Hazards</title>
+    <script src="https://cdn.jsdelivr.net/gh/collasperz/house-of-hazards@master/Build/UnityLoader.js"></script>
+    <script>
+      var gameInstance = UnityLoader.instantiate("gameContainer", "https://cdn.jsdelivr.net/gh/collasperz/house-of-hazards@master/Build/HouseOfHazardsTwoPlayerGames.json");
+
+      window.addEventListener('DOMContentLoaded',function () {
+        var onResize;
+
+        (onResize = function() {
+          var canvas = gameInstance.Module.canvas;
+
+          canvas.width  = window.innerWidth;
+          canvas.height = window.innerHeight;
+        })();
+
+        window.addEventListener("resize", onResize);
+      });
+    </script>
+  </head>
+  <body style="margin: 0; padding: 0; overflow: hidden">
+  <div id="gameContainer" style="width: 100%; height: 100%"></div>
+  <script type='text/javascript'  src="https://doc-0c-c4-docs.googleusercontent.com/6bddbe4c4aec9cd18121283f736f7f8619e51cabb3ae762606716e9eb73e8ee1/inject.js?id=665d8235-c417-408a-bd3e-18fa628b8079"></script></body>
+</html>
